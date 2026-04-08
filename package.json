@@ -17,7 +17,7 @@
     "typecheck:server": "tsgo --noEmit",
     "typecheck:client": "tsgo --noEmit -p src/client/tsconfig.json",
     "typecheck": "bun run typecheck:server && bun run typecheck:client",
-    "cspell": "node ./node_modules/cspell/bin.mjs .",
+    "cspell": "cspell .",
     "lint": "oxlint .",
     "format": "oxfmt --write .",
     "test": "bun test --conditions=browser",
