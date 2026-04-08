@@ -34,7 +34,7 @@ export async function connect(timeout = 5000) {
   } catch (e) {
     clearTimeout(timeoutId);
     if (e.name === 'AbortError') {
-      throw new Error('Connection timeout - is Helium running with --remote-debugging-port=9222?');
+      throw new Error('Connection timeout - is Chrome running with --remote-debugging-port=9222?');
     }
     throw e;
   }
