@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -13,9 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
 
       - uses: oven-sh/setup-bun@main
         with:
@@ -28,6 +32,23 @@ jobs:
 
       - name: Test
         run: bun run test
+
+      - name: Coverage PR comment
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        uses: Nef10/lcov-reporter-action@v0.6.1
+        with:
+          lcov-file: ./coverage/lcov.info
+          pr-number: ${{ github.event.pull_request.number }}
+          delete-old-comments: true
+          title: Test coverage
+
+      - name: Upload coverage (LCOV)
+        uses: actions/upload-artifact@v7
+        with:
+          name: coverage-lcov
+          path: coverage/lcov.info
+          if-no-files-found: error
+          retention-days: 30
 
       - name: Build web
         run: bun run build:web
