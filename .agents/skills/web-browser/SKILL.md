@@ -46,9 +46,13 @@ Execute JavaScript in active tab (async context). Be careful with string escapin
 
 ```bash
 ./scripts/screenshot.js
+./scripts/screenshot.js --delay 5000
 ```
 
 Screenshot current viewport, returns temp file path
+
+- `--delay <ms>` (or `-d <ms>`) waits before capturing, useful for WebGL/fonts/async UI to settle.
+- `--help` shows usage.
 
 ## Pick Elements
 

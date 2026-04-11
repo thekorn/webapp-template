@@ -7,12 +7,42 @@ import { connect } from './cdp.js';
 
 const DEBUG = process.env.DEBUG === '1';
 const log = DEBUG ? (...args) => console.error('[debug]', ...args) : () => {};
+const argv = process.argv.slice(2);
+
+function parseDelay(args) {
+  let delayMs = 0;
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
+    if (arg === '--help' || arg === '-h') {
+      console.log('Usage: ./scripts/screenshot.js [--delay <ms>]');
+      process.exit(0);
+    }
+    if (arg === '--delay' || arg === '-d') {
+      const value = args[i + 1];
+      if (!value) throw new Error('Missing value for --delay');
+      delayMs = Number(value);
+      if (!Number.isFinite(delayMs) || delayMs < 0) {
+        throw new Error(`Invalid --delay value: ${value}`);
+      }
+      i++;
+      continue;
+    }
+  }
+  return delayMs;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+const delayMs = parseDelay(argv);
+const timeoutMs = 15000 + delayMs;
 
 // Global timeout
 const globalTimeout = setTimeout(() => {
-  console.error('✗ Global timeout exceeded (15s)');
+  console.error(`✗ Global timeout exceeded (${Math.ceil(timeoutMs / 1000)}s)`);
   process.exit(1);
-}, 15000);
+}, timeoutMs);
 
 try {
   log('connecting...');
@@ -29,6 +59,11 @@ try {
 
   log('attaching to page...');
   const sessionId = await cdp.attachToPage(page.targetId);
+
+  if (delayMs > 0) {
+    log(`waiting ${delayMs}ms before screenshot...`);
+    await sleep(delayMs);
+  }
 
   log('taking screenshot...');
   const data = await cdp.screenshot(sessionId);
