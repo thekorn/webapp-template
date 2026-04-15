@@ -106,7 +106,7 @@
       "language_servers": ["tailwindcss-intellisense-css", "!vscode-css-language-server", "..."]
     }
   },
-  "language_servers": ["oxlint", "oxfmt", "tailwindcss-language-server", "cspell", "tsgo"],
+  "language_servers": ["oxlint", "oxfmt", "tailwindcss-language-server", "cspell", "tsgo", "make"],
   "lsp": {
     "oxlint": {
       "initialization_options": {
