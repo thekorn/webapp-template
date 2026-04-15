@@ -36,7 +36,7 @@ Keep `.headers on` and `.mode markdown` until you intentionally switch modes (e.
 sqlite3 /path/to/database.sqlite
 ```
 
-For News Globe, align with the running app: use the same file as `DATABASE_PATH` (see `src/server/lib/env.ts`). Schema reference: `docs/DB.md`.
+For this project, align with the running app: use the same file as `DATABASE_PATH` (see `src/server/lib/env.ts`). Schema reference: `docs/DB.md`.
 
 ## Common inspection commands
 

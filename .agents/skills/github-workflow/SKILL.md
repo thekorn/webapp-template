@@ -1,9 +1,9 @@
 ---
 name: github-workflow
-description: Runs News Globe development through GitHub issues—assign @me when starting work, small commits with issue references, push, and PRs that close or reference issues. Use when starting or finishing tracked work, when creating follow-up tasks, or when the user mentions issues, PRs, backlog, or GitHub workflow.
+description: Runs sample project development through GitHub issues—assign @me when starting work, small commits with issue references, push, and PRs that close or reference issues. Use when starting or finishing tracked work, when creating follow-up tasks, or when the user mentions issues, PRs, backlog, or GitHub workflow.
 ---
 
-# GitHub workflow (News Globe)
+# GitHub workflow (sample project)
 
 ## When this applies
 
