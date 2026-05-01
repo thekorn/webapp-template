@@ -24,32 +24,32 @@
     "check": "bun run typecheck && bun run lint && bun run format && bun run cspell"
   },
   "dependencies": {
-    "@logtape/logtape": "^2.0.5",
+    "@logtape/logtape": "^2.0.6",
     "@solidjs/router": "^0.16.1",
     "@ws-kit/bun": "^0.10.1",
     "@ws-kit/client": "^0.10.0",
     "@ws-kit/valibot": "^0.10.2",
-    "bunqueue": "^2.7.2",
-    "effect": "^3.21.0",
+    "bunqueue": "^2.7.10",
+    "effect": "^3.21.2",
     "solid-js": "^1.9.12",
     "valibot": "^1.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@babel/preset-typescript": "^7.28.5",
-    "@happy-dom/global-registrator": "^20.8.9",
+    "@happy-dom/global-registrator": "^20.9.0",
     "@solidjs/testing-library": "^0.8.10",
-    "@tailwindcss/cli": "^4.2.2",
+    "@tailwindcss/cli": "^4.2.4",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@types/babel__core": "^7.20.5",
-    "@types/bun": "^1.3.12",
-    "@typescript/native-preview": "^7.0.0-dev.20260411.1",
+    "@types/bun": "^1.3.13",
+    "@typescript/native-preview": "^7.0.0-dev.20260501.1",
     "babel-preset-solid": "^1.9.12",
     "cspell": "^10.0.0",
-    "oxfmt": "^0.44.0",
-    "oxlint": "^1.59.0",
-    "tailwindcss": "^4.2.2"
+    "oxfmt": "^0.47.0",
+    "oxlint": "^1.62.0",
+    "tailwindcss": "^4.2.4"
   },
   "peerDependencies": {}
 }
