@@ -1,5 +1,7 @@
 import { plugin } from 'bun';
 import { transformSync } from '@babel/core';
+import presetTypescript from '@babel/preset-typescript';
+import presetSolid from 'babel-preset-solid';
 import { resolve } from 'node:path';
 
 const solidWebClient = resolve(import.meta.dir, '../../../node_modules/solid-js/web/dist/web.js');
@@ -22,10 +24,7 @@ await plugin({
 
       const result = transformSync(code, {
         filename: args.path,
-        presets: [
-          ['@babel/preset-typescript', { isTSX: true, allExtensions: true }],
-          ['babel-preset-solid'],
-        ],
+        presets: [presetTypescript, presetSolid],
       });
 
       return {

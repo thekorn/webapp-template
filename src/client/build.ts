@@ -19,10 +19,7 @@ const solidPlugin: import('bun').BunPlugin = {
       const code = await Bun.file(args.path).text();
       const result = transformSync(code, {
         filename: args.path,
-        presets: [
-          ['@babel/preset-typescript', { isTSX: true, allExtensions: true }],
-          ['babel-preset-solid'],
-        ],
+        presets: ['@babel/preset-typescript', 'babel-preset-solid'],
       });
       return {
         contents: result?.code ?? '',
