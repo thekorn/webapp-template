@@ -71,7 +71,11 @@ You can also build the production assets and run the server directly with Nix:
 nix run
 ```
 
-`nix run` installs dependencies with the checked-in `bun.lock` when needed, builds the production web/server/CSS bundles, and starts the app. Set `SAMPLE_PROJECT_SKIP_BUILD=1` to reuse an existing `dist/` build.
+`nix run` builds the application and its Bun dependencies in the Nix store from the checked-in `bun.lock`, then starts the compiled server. It can also be run directly from GitHub:
+
+```bash
+nix run --refresh github:thekorn/webapp-template
+```
 
 ## Testing
 
