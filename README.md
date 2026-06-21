@@ -18,6 +18,12 @@
 - [Bun](https://bun.sh) (v1.3.9+)
 - AWS credentials with read access to ECS (configured via `.env` or environment variables)
 
+Alternatively, use the included Nix flake to get the required toolchain:
+
+```bash
+nix develop
+```
+
 ## Setup
 
 ```bash
@@ -38,6 +44,14 @@ Run all services (client dev server + backend) concurrently:
 bun run dev
 ```
 
+When using Nix, enter the development shell first:
+
+```bash
+nix develop
+bun install
+bun run dev
+```
+
 This uses [shoreman](https://www.chrismytton.com/shoreman/) to run the services defined in the `Procfile`:
 
 - **client** — Bun bundler in watch mode (`bun run dev:web`)
@@ -50,6 +64,14 @@ This uses [shoreman](https://www.chrismytton.com/shoreman/) to run the services 
 bun run build    # Run checks, tests, then build web + server + CSS
 bun start        # Start the production server
 ```
+
+You can also build the production assets and run the server directly with Nix:
+
+```bash
+nix run
+```
+
+`nix run` installs dependencies with the checked-in `bun.lock` when needed, builds the production web/server/CSS bundles, and starts the app. Set `SAMPLE_PROJECT_SKIP_BUILD=1` to reuse an existing `dist/` build.
 
 ## Testing
 
