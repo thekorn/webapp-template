@@ -1,13 +1,21 @@
 {
   "words": [
-    "shoreman",
-    "logtape",
-    "solidjs",
-    "Procfile",
-    "oxlint",
-    "happydom",
     "bunqueue",
-    "registrator"
+    "chdir",
+    "dont",
+    "happydom",
+    "logtape",
+    "nixos",
+    "nixpkgs",
+    "oxlint",
+    "pkgs",
+    "pname",
+    "Procfile",
+    "registrator",
+    "shoreman",
+    "solidjs",
+    "stdenv",
+    "thekorn"
   ],
   "ignorePaths": ["node_modules/**", "scripts/**", "dist/**", ".zed/settings.json"]
 }
