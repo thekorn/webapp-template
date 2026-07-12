@@ -24,14 +24,14 @@
     "check": "bun run typecheck && bun run lint && bun run format && bun run cspell"
   },
   "dependencies": {
-    "@logtape/logtape": "^2.2.1",
+    "@logtape/logtape": "^2.2.4",
     "@solidjs/router": "^0.16.1",
     "@ws-kit/bun": "^0.10.1",
     "@ws-kit/client": "^0.10.0",
     "@ws-kit/valibot": "^0.10.2",
-    "bunqueue": "^2.8.25",
+    "bunqueue": "^2.8.32",
     "effect": "^3.21.4",
-    "solid-js": "^1.9.13",
+    "solid-js": "^1.9.14",
     "valibot": "^1.4.2"
   },
   "devDependencies": {
@@ -46,10 +46,10 @@
     "@types/bun": "^1.3.14",
     "babel-preset-solid": "^1.9.12",
     "cspell": "^10.0.1",
-    "oxfmt": "^0.56.0",
-    "oxlint": "^1.71.0",
+    "oxfmt": "^0.58.0",
+    "oxlint": "^1.73.0",
     "tailwindcss": "^4.3.2",
-    "typescript": "^7.0.1-rc"
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {}
 }
